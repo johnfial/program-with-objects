@@ -1,0 +1,102 @@
+/* Following code edited from Andy's Notes file*/
+
+body {
+	padding: 20px 10px;
+	font-family: Helvetica;
+	max-width: 2000px;
+	margin: 0 auto; /* The 0 refers to the top and bottom margins and the "auto" automatically */
+	font-size: 14px;
+}                 /* sets the left and right margins to equal values. This centers the body on the page.*/
+
+h1 {
+	text-align: center;
+	color: black;
+}
+
+.image {
+	text-align: center;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	background-color: #164F06;
+	border-radius: 50px;
+	margin: 10px auto
+}
+
+img.resize {
+    max-width:60%;
+    max-height:60%;
+}
+
+h2 {
+	margin: 10px;
+	text-align: center;
+}
+
+p {
+	margin: 15px 0;
+}
+
+.lessona-name {
+	background-color: green;
+	border-radius: 50px;
+	color: white;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.lessonb-name {
+	background-color: #164F06;
+	border-radius: 50px;
+	color: white;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.subheader {
+	text-align: center;
+	background-color: #1f552a;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 100px;
+	color: white;
+}
+
+.note {
+	font-family: Helvetica;
+	font-weight: lighter;
+	margin: 20px;
+	color: black;
+}
+
+ul {
+/*	list-style-type: none; 
+/* (edited out but keeping the code) this removes the bullets that show up by default in unordered lists */
+	font-weight: lighter;
+	font-family: Helvetica;
+	margin: 10px;
+	color: black;
+}
+
+ol {
+	font-family: Helvetica;
+	font-weight: lighter;
+	margin: 20px;
+	color: black;
+}
+
+li {
+	font-family: Helvetica;
+	font-weight: lighter;
+	margin: 10px;
+	color: black;
+}
+
+.code {
+	font-size: 1.1em;
+	font-family: Courier;
+	color : white;
+	font-weight: bold;
+	padding-left:  4px;
+	padding-right: 4px;
+}

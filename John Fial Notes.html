@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<head>
+  <title>John's Notes</title>
+  <link rel="stylesheet" href="John%20Fial%20CSS.css">
+  <!--this is an HTML comment, and what follows is the CSS section-->
+  <style>
+    div {
+    }
+    /*This is a CSS comment, and this section is where the entire CSS code could go (inside the HTML document)*/
+  </style>  
+</head>
+
+<body> 
+    <div class="image"><img src="john.jpg" alt="This is my LinkedIn profile shot: deadly serious.">          Intro to Programming Notes</div>
+
+  <div class="lessonb-name">
+    <h2>Checklist:</h2>  
+      <div class="note">
+        <ul>
+        <li>(Repeating) Pass validation checks for <a href="http://validator.w3.org/#validate_by_input" target="_blank">HTML here</a> and <a href="http://jigsaw.w3.org/css-validator/#validate_by_input" target="_blank">CSS here</a>.
+        </ul>
+    </div>
+  </div>
+
+  <div class="lessona-name">
+    <h2>Stage 3: Object Oriented Programming</h2>
+
+      <div class="subheader">
+          Abstraction</div>
+        <ul>
+        <li>Python includes many programs in its "standard library," such as "webbrowser" and "time". This hiding of details is called <b>abstraction</b>. Abstraction helps because we can access functions that have already been programmed and explained in detail in documentation, allowing programmers to focus on the new programming necessary to accomplish their goals.
+        <li>What we've done so far is use a library file (webbrowser, os, etc.) and a function (webbrowser.open or os.rename). Turtle contains something different: <b>a class.</b>
+        </ul>
+
+      <div class="subheader">
+          Classes</div>
+
+        <ul>
+        <li>A <b>class</b> is a "neatly packaged box" that puts things together quite well. Lets us write  <span class="code">turtle.Turtle()</span> which actually calls the <span class="code">initialize</span> function. In the instructor's analogy, he equates the term class to a blueprint of a building. A class can have both data (instance variables) and methods (instance methods).
+          <ul>
+            <li>The word <b>instance</b> (aka object) is used exactly like I'm used to from general computer usage and gaming. In the blueprint analogy, it's a single object based on the class blueprint.
+            <li>When we call the class (such as turtle), we're really calling the <span class="code">init</span> function <em>within</em> the class to initialize a new instance.
+            <li>Instance variables are the individual variables (like movie title, storyline, etc.) within an instance.
+            <li>An instance <b>method</b> is a function that is defined <em>inside</em> of a class.
+            <li>Classes are the core of Object Oriented Programming (OOP). An object is an instance of a class, and is where the name comes from.
+            <li>Is something an object or a class? Remember the question: <em>Is it a salmon or a fish?</em> Or, is it a fish, a salmon, or a salmon named Mary? See <a href="http://learnpythonthehardway.org/book/ex42.html" target="_blank">this page</a> if confused.
+            <li>Examples: <img class="resize" src="classes_overview.png" alt="Screenshot of the outline of classes and related objects.">
+          </ul>
+        <li>Class Variables
+          <ul> 
+            <li>A <b>class</b> variable is a higher-level variable, defined at the level of the class itself, before the init function and its instance variables are initialized. For example, remember that we used the movie ratings (G, PG, etc.) as a class variable, since those wouldn't change depending on the movie. How to tell? Is the variable more associated with the class as a whole, or each instance in general? Asking that question should help.
+            <li>One predefined class variable is "doc", which is accessed by <span class="code">filename.Classname.__doc__</span> with two underscores. It is set by being the first line in the class code with triple quotes.
+            <li>Other predefined class variables can be found <a href="http://www2.lib.uchicago.edu/keith/courses/python/class/5/" target="_blank">at this page</a>. Note that "name" and "module" call their appropriate names. Module refers to the filename loaded (the "media" in media.py, for example), and name refers to the name of the class.
+          </ul>
+        <li>Classes: Style and Misc. Notes:
+          <ul>
+            <li>Note that the <a href="https://google-styleguide.googlecode.com/svn/trunk/pyguide.html" target="_blank">Google Style Guide</a> says it's good practice to have the first letter of a class name in Caps.
+            <li>It's good practice to define your class in one file, and REFERENCE that class from another (working) file.
+            <li><span class="code">self</span> is not technically a python keyword, but a useful convention used by programmers, which makes it easier to read code.
+          </ul>
+        </ul>
+
+      <div class="subheader">
+          Misc. Notes</div>
+
+        <ul>
+        <li>A <b>constructor</b> is called whenever we create an instance of a class. The constructor is basically the "init" method inside the class, which uses the "self" (instance) name to initialize all the instance variables. 
+        <li><b>Inheritance</b>
+          <ul>
+            <li>Inheritance is where child objects inherit attributes, methods, etc. from their parents. We were already doing this in Modules 1 and 2, where HTML "objects" had a certain class whose style could be defined in the adjacent CSS file. That way, once we edit the CSS, the changes apply to all the applicable HTML objects of that class. Same thing in python: any child classes have the attributes of their parent classes, as well, allowing us to re-use code. <b>When in doubt</b>, review the inheritance.py file in lesson 3.4b.advanced in order to understand child and parent class attributes. Before running the code, mentally figure out what will print first!
+            <li>When both the child and parent have the same attribute or method (function), and it is called on a child class, the code in the child's class will be executed (so if the child "show_info" function had three print statements, and the parent's only had two, <span class="code">child.show_info()</span> would print three statements). This is called <b>method overriding</b>.
+          </ul>
+          <li>The difference between <span class="code">from</span> as opposed to <span class="code">import</span>: the former only imports the specified functions or classes within the library/file specified, whereas the latter imports the entire library. In the latter case, functions need to be referenced by using <span class="code">libraryname.function</span>, but in the former case, referencing <span class="code">function</span> will suffice. Note that there are pros and cons to each!
+        </ul>
+  </div>  
+
+  <div class="lessonb-name">
+    <h2>Stage 2 (Python)</h2>
+
+      <div class="subheader">
+          2.7: How to solve a problem (Days between Dates)</div>
+      <div class="note">
+      <ul>            
+        <li>What is the first thing you should do to solve a problem like this?
+            MAKE SURE YOU UNDERSTAND THE PROBLEM!
+            Do NOT just start writing code
+        <li>What does it mean to "understand a problem"? The solution to a problem can take its input and turn that that into the desired output.
+        <li>Psueudocode:
+        Write "algorithm" pseudocode… (see screenshots)
+        <li>Video: https://www.udacity.com/course/viewer/#!/c-nd000/l-4184188665/m-108325394 
+        Humans are lazy, and we try to do things in the quickest way. Computers are not lazy, and they can do things in simple, mechanical ways.
+        <li>Defensive programming: checking that the assumptions are true. IE: checking that the second date is AFTER the first date. If you don’t check that with the function as written, the user could enter inputs that really mess the program up.
+        <li>Steps for turning a problem into code: (#0: Don't panic!)
+          <ol>
+            <li>What are the inputs?
+            <li>What are the outputs?
+            <li>Solve the problem! 
+              Trouble? Break it down into smaller parts…
+              Work out some examples...
+              Understand the relationships between the parts of the function.
+              Also, consider systematically how a human would solve the problem. If you can't do that first, you're not ready to write code to do it!
+            <li>Don't optimize prematurely!
+            <li>Develop incrementally and test as we go. Write small bits of code and ensure you know what they do before moving on!
+        </ol>
+        </ul>
+        </div>  
+
+      <div class="subheader">
+          2.6: Lists, yay!</div>
+      <div class="note">
+      <p><ul>  
+        <li>A string is a kind of structured data
+        The items inside a list can be anything: characters, strings, numbers, even other lists!
+        <li>For large lists, be SURE to end a line on a comma, and remember how much it helps to indent things in a logical manner for humans
+        <li>Mutation:
+            <ul>
+              <li>Changes the value of an item within a list, without actually changing the list (think of his arrow to the new string as you changed the string "s". This is mutation of a list:
+              <li><span class="code">p=["H","e","l","l","o"]</span>
+              <li><span class="code">p[0]="Y"</span>
+              <li>If p is a list, and q=p, obviously printing q will print the list p. What's NOT obvious is that changing an element within list q will also change list p simultaneously, since they’re the same list -- they're the same object.
+              </ul>
+        <li>Aliasing:
+            <ul>
+              <li>Two different ways to refer to the same object is called aliasing. (James Bond analogy)
+             <li>Aliasing is important: review the video <a href="https://www.udacity.com/course/viewer/#!/c-nd000/l-4152219158/e-48746083/m-48369804" target="_blank">here</a> if necessary!
+            </ul>
+        <li>List Operations
+            <ul>
+            <li><span class="code">.append   ::  </span>Like a procedure, but this is a method. Append adds a new element to the end of a list.
+            <li><span class="code">.plus   ::  </span>Behaves very similar to concatenation operation for strings.
+              Creates a NEW list with all the elements, does NOT mutate the previous lists.
+            <li><span class="code">.len   ::  </span>On a string: The number of characters in a string. On a list: The number of elements in that list (Does NOT further count for lists within the list)
+            <li><span class="code">.index(value)   ::  </span> Returns the first position where that value is in the list, otherwise produces an error              
+            <li>Note the difference between append and +. .append will only add the ENTIRE data/element referenced to the appended list, and its .len will only be +1 higher than before. +, however, will concatenate the two together into a new list.
+            for loops:
+              The first "thing" defined in the for loop will be the "name" of each element of the for loop. See "2.6.25 for loops.py"
+            </ul>
+          </ul>
+        </div>
+
+      <div class="subheader">
+          Backus-Naur form and related general notes</div>
+      <div class="note">
+        <p>Non-terminals were shown in blue, and were on the left. Left side ALWAYS must be a non-terminal; whereas right side can contain a terminal, which was in black, and ends the line.</p>
+        <p>This is the grammar of python (if not interpreters overall)</p>
+        <p>Whats wrong with the following code: "print 299792458 * 1.0 / 1000000000 * 100". It has <b>bad code readability</b>. What the hell is each number? Why are they being multiplied and divided? Why do we care?</p>
+        <p>The values of variables can change! (Variables can vary!)</p>
+        <p>In python and most programming languages, the "=" sign does not mean equal to. It means an assignment -- so the right side value is assigned to the left side (variable name). OK to think of it like an arrow.</p>
+        <p>Usually DON'T want variables to start with capital letters. It's just convention.</p>
+        <p>The "+" operator is different when it acts on strings: it "concatenaetes" them, or puts them together. Note that you CAN multiply strings!</p>
+      </div>
+
+      <div class="subheader">
+          Strings</div>
+      <div class="note">
+        <p>Strings can start with ' or ", but need to end with the same. Another apostrophe or quotation marks within a string that began with the alternate character will be ignored.</p>
+        <p>You can select sequences and sub-sequences from strings (think this is called indexing), and herein lies a lot of the power of what's called indexing. <b>This is how data was stored in Cowen's lab: as deep, multi-layered indexes.</b></p>
+
+        <p>'.find' is what's called a <b>method</b>, which is a procedure that works on strings themselves. .find is written after the string. If the target string is not found, the output will be -1. </p>
+        <p>What's a parameter? In this code: "text".find("t") the "t" is a parameter.</p>
+        <p>"""Triple quotes (or apostrophes) can be used to make <br>a multi-line <br>string!</p>
+        <p>Storing the location of the first find result in a variable -- seems like a mildly useful concept at first, and will probably be increasingly useful. How? <br>location1 = "testing".find("t")
+          <br>THEN
+          <br><span class="code">print "test".find("t",location1+1)</span>
+        </p>
+        <p>Remember how the solution <span class="code">inner_text = div_element[5:-6]</span> worked as a better "general" solution because it uses "negative indexing." That is, no matter how long the text within the div was, the -6 endpoint would "pull" from the right/end of the line, so it is a better solution.</p>
+        <p>print s[:3] + s[3:]<br> will print two parts of the string "s" : first, from the 0th position until the 3rd position, and second, from the 3rd position until the end.</p>
+        <p>An <b>edge case</b> in programming is a situation that doesn't happen very often (like using an empty string). It's easy to forget about edge cases and doing so is a common cause of bugs.</p>
+        <p>The values of strings and integers are <em>immutable</em>. Lists, on the other hand, are mutable!</p>
+      </div>
+
+        <div class="subheader">
+          Functions (Also called procedures)</div>
+      <div class="note">
+        <p>A function is a "task" that is performed when executed, and can be repeated multiple times. Rather than simply performing a task on a print line or with an individual command in the interpreter, for example, functions can be called time and time again to perform their task. Functions can contain other functions, however...</p>
+        <p>Functions should be divided into their smallest useful parts, this way, it's easier to re-use individual functions without them being buried within other functions.</p>
+        <p>There are many defined functions within python, but a new one is defined by writing <span class="code">def function_name(input1,input2):</span> followed by the function's code.</p>
+        <p>Inputs to functions can also be called operands or arguments.</p>
+      </div>
+
+      <div class="subheader">
+          IF statements</div>
+      <div class="note">
+        <p>The text inside the if function is called "block," and the next non-indented line will be executed no matter the result of the if function.</p>
+        <p>On the "make a function that takes two numbers and returns the greater of the numbers" lesson, my if statement was using the "print" command to return x or y. That wasn't accepted -- Udacity wanted me to use the return command at the end of the function instead. In any case, there are multiple ways to create the function. Oddly, I defined the variable "big" to the x or y value, and returned the variable "big". Strange way to do it.</p>
+        <p>Lessons learned from the "is friend" lesson (2.46): FORGOT THE DAMN ":" for like ten minutes! Also, returning boolean values meant explicitly-typed <span class="code">True</span>or <span class="code">False</span>, returning strings named "True" or "False" isn´t the same! In this same lesson, I also needed the entire <span class="code">name[0] == 'D' or name[0] == 'N'</span> between the "if" and the closing ":".</p>
+        <p>"OR" : If the first expression evalutes to True, the value is TRUE and the second expression is NOT evaluated. If the first expression evalutes to False, then the second expression IS evaluated, and that's the value of the or operator.</p>
+      </div>
+
+      <div class="subheader">
+          LOOP: "While" Loops</div>
+      <div class="note">
+        <p>While will <b>keep</b> executing and returning to the test expression until the test is false, whereas "if" will only execute 0 or 1 times.</p>
+      </div>
+
+      <div class="subheader">
+          2.5 Debugging</div>
+      <div class="ol">
+        <ol type="1">     
+        <li>Pay attention to the line number (although it's not always the first line number to show up in a python traceback) and the error message.</li>
+        <li>Use example code and compare. Comment out your code, COPY the new code to do exactly what you want, make sure it works, then modify it slowly, line by line.</li>
+        <li>Make random changes and see if that works!</li>
+        <li>Check (and print) intermediate results by using code like this: <span class="code">print "# DEBUG:"</span> and <span class="code">print "# location"</span>, location within a function in order to print the location variable.</li>
+        <li>Keep old versions of code by commenting them out!</li>
+           <li>Debugging is a part of life...deal with it, and ask for help! See the 2.5 debugging lesson at <A HREF="https://www.udacity.com/course/viewer/#!/c-nd000/l-4146130474/m-4119808593">this page</A>. Also consider watching the debugging strategy session  <A HREF="http://bit.ly/1EyqSch">here.</A></li>
+           <li>Getting a wierd "invalid syntax" error on an else or indented line? The problem is likely using combinations of backspace, shift, and tab. <b>There are issues here: python code is executed differently in sublime vs. Udacity depending on the combinations of spaces used.</b>Delete all the spacing before the else, so that they are on the same line, and hit "return."
+           <li>Random, need to sort: Remember that .find text goes in parenthesis () but location numbers go in brackets []!!
+           </ol>
+      </div>
+
+      <div class="subheader">
+          Early Notes </div>
+      <div class="note">
+        <ul>
+      <li>You should pay attention to: What Dave says about breaking problems into smaller pieces. 2) How Dave talks about computers, computer programs, and the web.
+      <li>Python itself is whats called an "interpreter," which changes our pyhon language into the language of the computer itself.
+      <li>Why do natural languages suck? Theyre ambiguous. Theyre verbose.
+      <li>A program OR compiler translates high-level language (like python) which humans can understand into into binary, which is the only real language of a computer. There are differences between the two types of translators (interpreters and compilers) but the concept is the same. One difference (see the site <a href="http://www.programiz.com/article/difference-compiler-interpreter" target="_blank">here</a> for more info) is that interpreters allow their source-code to be a bit more human-friendly, but the downside is that it takes longer for the code to be executed overall.
+      </ul>
+      </div>
+
+    </div>
+
+  <div class="lessona-name">
+    <h2>Deeper thoughts</h2>    
+      <div class="note">
+        <ul>
+          <li>NOTE: remember that it's cleaner code to use a FOR loop with a range (example: <span class="code"> for e in range(0,36): </span>) rather than a while loop with a counter.
+          <li>Code (at least what I've learned so far) still runs from top-to-bottom, left-to-right. <b>Biology doesn't work like this -- it's far more stochastic.</b>
+          <li>Lesson learned from checking code: When editing the code based on output errors, edit from LAST LINE of code moving UPWARDS, so that line #s will not be distorted by changes!
+          <li>Numerical/Philosophical lesson 2.7.21 about instruction and computational time: <A HREF="https://www.udacity.com/course/viewer/#!/c-nd000/l-4184188665/m-108325402%20On%20Optimization.%202.7.21" target="_blank">here</A>
+          <li>Review Assertion Error writing at <A HREF="https://www.udacity.com/course/viewer/#!/c-nd000/l-4184188665/e-108281771/m-108325416%202.7.30" target="_blank">this video</A>, lesson 2.7.30 for both the quiz, how to write them, and review WHY.
+        </ul>    
+      </div>
+  </div>
+
+  <div class="lessonb-name">
+    <h2>Lesson 1 General Notes</h2>    
+    <div class="subheader">
+    Sizing Note
+    </div>
+    <div class="note">
+      <p>
+      To help deal with sizing issues, set sizes in terms of percentages as opposed to pixels. Also, set the box-sizing attribute to border-box for every element. Finally, if you want DIVs to appear next to each other (or make this possible), add the rule <b>display: flex,</b> to the appropriate CSS for that div/h-class element.
+      </p>      
+    </div>
+    <div class="subheader">
+    Miscellaneous
+    </div>
+    <div class="note">
+      <p><b>Avoid repetition!</b> Always ask if it is possible to apply a characteristic to an item (text, image, a paragraph, a section, whatever) such that that characteristic can then be easily changed later -- and the change will apply to ALL items of that type.</p>
+      <p>Less code means less possibility for mistakes and bugs, less work to check, and better optimization overall!</p>
+    </div>
+        <div class="subheader">
+    Code, Test, and Refine
+    </div>
+    <div class="ol">
+            <ol type="1">
+      <li>Look for natural boxes.</li>
+      <li>Look for repeated styles and semantic elements. h2 should be second biggest, etc...</li>
+      <li>Write your HTML.</li>
+      <li>Apply your styles...from BIGGEST to smallest.</li>
+      <li>Fix things! Especially the small things...</li>
+      <li>(Repeat steps 3 & 4)</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="lessona-name">
+    <h2>Lesson 1.3: CSS</h2>    
+    <div class="note">
+      <p>CSS stands for Cascading Style Sheets, used for styling.</p>
+      <p>The MOST specific rule applies always (this is what cascading means).</p>
+      <p>Under the hood, everything in both HTML and CSS are rectangular shapes (even if they look otherwise).</p>
+      <p>An HTML HEAD tag attribute called "rel" with value "stylesheet" points to the style.css file, which tells the page how to style all its elements based on that .css file. </p>
+    </div>
+  </div>
+
+  <div class="lessonb-name">
+    <h2>Lesson 1.1: HTML</h2>
+    <div class="note">
+      <p>An <b>element</b> is the entire structure of opening, main, and closing tags.
+      <p>Remember to always <b>close tags as soon as you write them</b>!</p>
+      <p>The different variables of a tag are called "attributes," such as the "src" or "alt" attributes.</p>  
+      <p>&lt;a&gt; is called the <em>anchor</em> tag.</p>
+      <p>The image tag is an example of a "Void" tag: it has no content, and doesn't need an end tag.</p>
+      <p>Tags can be <b>inline</b> tags (such as a break tag) or <b>block</b> tags (such as a paragraph tag). SPAN is an inline tag, but DIV is a block tag.</p>
+    </div>
+  </div>
+
+</body>
